@@ -3,16 +3,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Welcome to XYZ BANK</title>
+<title>Welcome to SBI BANK</title>
 <style>
   body {
-    background-color: yellow;
+    background-color: white;
   }
 </style>
 </head>
 <body>
-<h1>Welcome to XYZ BANK</h1>
-<p>This is a sample Welcome to XYZ BANK application for 2023 July Morrning Batch.</p>
+<h1>Welcome to SBI BANK</h1>
+<p>This is a sample Welcome to SBI BANK application for 2023 July Morrning Batch.</p>
 </body>
 </html>
 
