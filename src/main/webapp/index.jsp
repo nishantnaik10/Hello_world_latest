@@ -6,7 +6,7 @@
 <title>Welcome to SBI BANK</title>
 <style>
   body {
-    background-color: green;
+    background-color: white;
   }
 </style>
 </head>
