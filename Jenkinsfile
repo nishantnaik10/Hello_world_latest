@@ -22,6 +22,9 @@ pipeline {
         stage('Docker_build') {
             steps {
                 echo 'Docker build_projectd'
+                sh 'yum install docker -y'
+                sh 'systemctl start docker'
+                sh 'systemctl enable docker'
                 sh 'docker build -t projectd .' 
             }
         }
