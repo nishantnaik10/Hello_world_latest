@@ -1,20 +1,20 @@
 pipeline {
-    agent { label "agentA" }
+    agent { label "slave" }
     
     triggers {
         pollSCM('* * * * *')
     }    
 
     stages {
-        stage('clone_project_A') {
+        stage('clone_Helloworld') {
             steps {
-                echo 'clone project A'
-                git 'https://github.com/vincloud2/Helloworld-latest.git'
+                echo 'clone Helloworld'
+                git 'https://github.com/nishantnaik10/Hello_world_latest.git'
             }
         }
-        stage('build_project_A') {
+        stage('build_Helloworld') {
             steps {
-                echo 'build_projectA'
+                echo 'build_Helloworld'
                 sh 'yum install maven -y'
                 sh 'mvn -Dmaven.test.failure.ignore=true install'
             }
@@ -28,19 +28,19 @@ pipeline {
         stage('login to dockerhub') {
             steps {
                 echo 'login to dockerhub'
-                sh 'docker login -u vnom1985 -p abc@12345'
+                sh 'docker login -u nishantnaik10 -p Bobonkgvn04@'
             }
         } 
         stage('Tag the Image') {
             steps {
                 echo 'Tag the Image'
-                sh 'docker tag  projectd vnom1985/projectd'
+                sh 'docker tag  projectd nishantnaik10/projectd'
             }
         } 
         stage('Deploy to docker hub') {
             steps {
                 echo 'Deploy to docker hub'
-                sh 'docker push vnom1985/projectd'
+                sh 'docker push nishantnaik10/projectd'
             }
         }
         stage('Remove Docker conatiner') {
@@ -53,7 +53,7 @@ pipeline {
         stage('Run docker image') {
             steps {
                 echo 'Deploy to docker hub'
-                sh 'docker run --name projectd_conatiner -d -p 8181:8080 vnom1985/projectd'
+                sh 'docker run --name projectd_conatiner -d -p 8181:8080 nishantnaik10/projectd'
             }
         }        
     }
